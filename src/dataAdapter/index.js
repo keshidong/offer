@@ -55,7 +55,9 @@ export const postResume = (name, target, tel, email, profile, education, experie
                 // },
                 //set listener for extension transaction result
                 listener: (res) => {
-                    resolve(res);
+                    if(res.txhash) {
+                        resolve(res);
+                    }
                 }
             });
     });
